@@ -1,4 +1,4 @@
-export default {
+export const themeDark = {
   colors: {
     light_100: '#FFFFFF',
     light_200: '#FFFAF1',
@@ -36,5 +36,24 @@ export default {
       cake_100: '#065E7C',
       cake_200: '#82F3FF',
     },
+  },
+
+  fonts: {
+    poppins_100: '500 0.875rem/1.5rem "Poppins", sans-serif',
+    poppins_200: '500 1.25rem/160% "Poppins", sans-serif',
+    poppins_300_bold: '700 1.5rem/140% "Poppins", sans-serif',
+    poppins_300_regular: '400 1.5rem/140% "Poppins", sans-serif',
+    poppins_400: '500 2rem/140% "Poppins", sans-serif',
+    poppins_500: '500 2.5rem/140% "Poppins", sans-serif',
+
+    roboto_smallest_regular: '400 0.75rem/160% "Roboto", sans-serif',
+    roboto_smaller_regular: '400 0.875rem/160% "Roboto", sans-serif',
+    roboto_smaller_bold: '700 0.875rem/160% "Roboto", sans-serif',
+    roboto_small_spaced: '400 1rem/160% "Roboto", sans-serif',
+    roboto_small_regular: '400 1rem/100% "Roboto", sans-serif',
+    roboto_big_bold: '700 1.25rem/160% "Roboto", sans-serif',
+    roboto_bigger_bold: '700 1.5rem/normal "Roboto", sans-serif',
+    roboto_biggest_regular: '400 2rem/160% "Roboto", sans-serif',
+    roboto_giant_bold: '700 2.625rem/normal "Roboto", sans-serif',
   },
 }

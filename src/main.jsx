@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom/client'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './styles/global'
 import { AuthProvider } from './hooks/auth'
-import { SignUp } from './pages/SignUp'
+import { Home } from './pages/Home'
 
-import theme from './styles/theme'
+import { themeDark } from './styles/theme'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeDark}>
       <GlobalStyles />
       <AuthProvider>
-        <SignUp />
+        <Home />
       </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,

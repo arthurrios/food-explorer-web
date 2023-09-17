@@ -11,4 +11,9 @@ export const Container = styled.button`
   border-radius: 5px;
 
   font-size: 0.875rem;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.tints.tomato_200};
+  }
 `

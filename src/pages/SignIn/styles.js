@@ -1,34 +1,37 @@
 import { styled } from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
   height: 100%;
-  padding: 7rem 4rem 0;
+  display: flex;
   flex-direction: column;
-
-  @media (min-width: 1000px) {
-    flex-direction: row;
-  }
+  align-items: center;
+  margin-top: -2.5rem;
+  justify-content: center;
+  min-height: 100vh;
 `
 
-export const Logo = styled.div`
+export const Main = styled.div`
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto;
+  justify-content: center;
+  height: 100%;
+  padding: 1.75rem 0;
+  flex-direction: column;
+  min-width: 24.875rem;
+  max-width: 29.75rem;
 
-  @media (min-width: 1000px) {
-    margin-top: -5rem;
+  div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    font: ${({ theme }) => theme.fonts.roboto_giant_bold};
+
+    > svg {
+      font-size: 2.97rem;
+    }
   }
 
-  h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-  }
-
-  svg {
-    width: 2.7rem;
-    height: 2.7rem;
+  @media (min-width: 1049px) {
+    flex-direction: row;
+    gap: 18.75rem;
   }
 `
 
@@ -40,25 +43,40 @@ export const Form = styled.form`
   margin-top: 5rem;
   gap: 2rem;
   max-width: 20rem;
+  background-color: ${({ theme }) => theme.colors.dark_700};
+  min-width: 29.75rem;
+  padding: 4rem;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1049px) {
+    background-color: transparent;
+
     > h1 {
       display: none;
     }
   }
 
-  @media (min-width: 1000px) {
-    min-width: 29.75rem;
-    background-color: ${({ theme }) => theme.colors.dark_700};
-    padding: 4rem;
-    margin-top: 0;
+  @media (min-width: 1049px) {
     border-radius: 16px;
 
     > h1 {
       display: flex;
       justify-content: center;
+      font: ${({ theme }) => theme.fonts.poppins_400};
+    }
+  }
 
-      font-weight: 500;
+  input {
+    display: flex;
+    width: 100%;
+    padding: 0.75rem 0.875rem;
+    align-items: center;
+    background-color: ${({ theme }) => theme.colors.dark_900};
+    color: ${({ theme }) => theme.colors.light_400};
+    border-radius: 8px;
+    border: 0;
+
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.light_500};
     }
   }
 
@@ -70,5 +88,11 @@ export const Form = styled.form`
       color: ${({ theme }) => theme.colors.light_400};
       margin-bottom: 0.5rem;
     }
+  }
+  .createBtn {
+    background-color: transparent;
+    border: none;
+    color: ${({ theme }) => theme.colors.light_100};
+    font-size: 0.875rem;
   }
 `

@@ -12,7 +12,7 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.colors.light_300};
   }
 
-  body, button {
+  button {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 500;
