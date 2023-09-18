@@ -39,7 +39,9 @@ export const themeDark = {
   },
 
   fonts: {
+    poppins_050: '400 0.75rem/140% "Poppins", sans-serif',
     poppins_100: '500 0.875rem/1.5rem "Poppins", sans-serif',
+    poppins_150: '500 1.125rem/1.5rem "Poppins", sans-serif',
     poppins_200: '500 1.25rem/160% "Poppins", sans-serif',
     poppins_300_bold: '700 1.5rem/140% "Poppins", sans-serif',
     poppins_300_regular: '400 1.5rem/140% "Poppins", sans-serif',
