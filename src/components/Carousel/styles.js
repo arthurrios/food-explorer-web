@@ -40,6 +40,34 @@ export const Content = styled.div`
     scroll-snap-align: center;
   }
 `
+export const ControlLeft = styled.div`
+  position: absolute;
+  left: 0;
+  top: 15.5rem;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+
+  @media (max-width: 1049px) {
+    display: none;
+  }
+`
+
+export const ControlRight = styled.div`
+  position: absolute;
+  right: 0;
+  top: 15.5rem;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+
+  @media (max-width: 1049px) {
+    display: none;
+  }
+`
+
 export const GradientLeft = styled.div`
   position: absolute;
   top: 0;
@@ -50,7 +78,7 @@ export const GradientLeft = styled.div`
   pointer-events: none;
 
   @media (max-width: 1049px) {
-    width: 10rem;
+    display: none;
   }
 `
 export const GradientRight = styled.div`
@@ -64,6 +92,6 @@ export const GradientRight = styled.div`
   pointer-events: none;
 
   @media (max-width: 1049px) {
-    width: 10rem;
+    display: none;
   }
 `

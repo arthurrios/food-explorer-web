@@ -90,7 +90,7 @@ export const Slogan = styled.div`
     }
   }
 
-  @media (max-width: 1049px) {
+  @media (max-width: 408px) {
     h1 {
       font-size: 0.875rem;
     }

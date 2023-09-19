@@ -10,8 +10,8 @@ export function Home() {
       <Banner>
         <WrappedImg />
         <Slogan>
-          <h1>Sabores inigualáveis</h1>
-          <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
+          <h1>Unmatched flavors!</h1>
+          <p>Feel the care of the preparation with selected ingredients</p>
         </Slogan>
         <BgBanner />
       </Banner>

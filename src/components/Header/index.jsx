@@ -59,7 +59,7 @@ export function Header() {
         ) : (
           <Button className="orderLgBtn">
             <PiReceipt />
-            {`Pedidos (0)`}
+            {`Orders (0)`}
           </Button>
         )
       ) : isAdmin ? (

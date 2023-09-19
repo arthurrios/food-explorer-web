@@ -14,9 +14,11 @@ export function Card() {
   return (
     <Container>
       <img src="../../../public/dishes/Mask group-0.png" alt="" />
-      <h3>Salada Ravanello &gt;</h3>
-      <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim</p>
-      <span>R$ 49,97</span>
+      <h3>Ravanello Salad &gt;</h3>
+      <p>
+        Radishes, green leaves and sweet and sour sauce sprinkled with sesame
+      </p>
+      <span>$ 24,97</span>
 
       {isAdmin ? (
         <TopRightButton>
@@ -33,7 +35,7 @@ export function Card() {
               <span>01</span>
               <TfiPlus />
             </DishControls>
-            <Button>incluir</Button>
+            <Button>add</Button>
           </AmmountOfDishes>
         </>
       )}
