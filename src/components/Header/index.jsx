@@ -7,7 +7,7 @@ import { Brand } from '../ui/Brand'
 import { useState, useEffect } from 'react'
 
 export function Header() {
-  const isAdmin = true
+  const isAdmin = false
 
   const [search, setSearch] = useState('')
   const [hasSearchPlaceholder, setHasSearchPlaceholder] = useState(false)

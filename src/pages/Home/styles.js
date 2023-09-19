@@ -9,7 +9,7 @@ export const Container = styled.div`
   margin: 0 7.75rem 1.5rem;
 
   @media (max-width: 1049px) {
-    margin: 1.75rem 1rem;
+    margin: 1.75rem 0 0 1rem;
     padding-top: 7.75rem;
   }
 `
@@ -21,7 +21,7 @@ export const Banner = styled.div`
 
   @media (max-width: 1049px) {
     max-width: 100%;
-    margin-left: 1.25rem;
+    margin: 0 1.25rem;
   }
 `
 
@@ -87,6 +87,16 @@ export const Slogan = styled.div`
 
     p {
       font: ${({ theme }) => theme.fonts.poppins_050};
+    }
+  }
+
+  @media (max-width: 1049px) {
+    h1 {
+      font-size: 0.875rem;
+    }
+
+    p {
+      font-size: 0.625rem;
     }
   }
 `

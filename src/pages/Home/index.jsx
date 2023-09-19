@@ -1,3 +1,5 @@
+import { Card } from '../../components/Card'
+import { Carousel } from '../../components/Carousel'
 import { Header } from '../../components/Header'
 import { Banner, BgBanner, Container, Slogan, WrappedImg } from './styles'
 
@@ -13,6 +15,39 @@ export function Home() {
         </Slogan>
         <BgBanner />
       </Banner>
+      <Carousel
+        title="Meals"
+        content={
+          <>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </>
+        }
+      ></Carousel>
+      <Carousel
+        title="Beverages"
+        content={
+          <>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </>
+        }
+      ></Carousel>
+      <Carousel
+        title="Desserts"
+        content={
+          <>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </>
+        }
+      ></Carousel>
     </Container>
   )
 }

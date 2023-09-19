@@ -9,7 +9,8 @@ export default createGlobalStyle`
 
   body {
     background-color: ${({ theme }) => theme.colors.dark_400};
-    color: ${({ theme }) => theme.colors.light_300};
+    color: ${({ theme }) => theme.colors.light_100};
+    --webkit-font-smoothing: antialised;
   }
 
   button {
@@ -31,4 +32,31 @@ export default createGlobalStyle`
   button, a {
     cursor: pointer;
   }
+
+  ::-webkit-scrollbar {
+    width: 0.625rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.dark_1000};
+    border-radius: 0.3125rem;
+  }
+
+  * {
+        scrollbar-color: ${({ theme }) => theme.colors.dark_1000} transparent;
+    }
+
+    *::-moz-scrollbar-thumb {
+        background-color: red;
+        border-radius: 0.3125rem;
+    }
+
+    ::-ms-scrollbar {
+        width: 0.3125rem;
+    }
+
+    ::-ms-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.colors.dark_1000};
+        border-radius: 0.5rem;
+    }
 `

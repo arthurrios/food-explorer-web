@@ -19,8 +19,7 @@ export const themeDark = {
     dark_900: '#0D1D25',
     dark_1000: '#192227',
 
-    gradient_100:
-      'linear-gradient(90deg, rgba(0, 10, 15, 0.27) 0%, #000A0F 100%)',
+    gradient_100: 'linear-gradient(90deg, rgba(0, 10, 15, 0) 0%, #000A0F 100%)',
     gradient_200: 'linear-gradient(180deg, #091E26 0%, #00131C 100%)',
 
     tints: {
