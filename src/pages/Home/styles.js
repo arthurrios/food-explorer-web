@@ -18,6 +18,7 @@ export const Banner = styled.div`
   display: flex;
   position: relative;
   max-width: 100%;
+  justify-content: space-between;
 
   @media (max-width: 1049px) {
     max-width: 100%;
@@ -61,6 +62,7 @@ export const Slogan = styled.div`
   position: relative;
   left: -5rem;
   gap: 0.5rem;
+  text-align: right;
 
   h1 {
     font: ${({ theme }) => theme.fonts.poppins_500};
@@ -79,7 +81,7 @@ export const Slogan = styled.div`
     max-width: 12.375rem;
     height: 4rem;
     gap: 0.2rem;
-    left: -0.75rem;
+    left: -1.75rem;
 
     h1 {
       font: ${({ theme }) => theme.fonts.poppins_150};

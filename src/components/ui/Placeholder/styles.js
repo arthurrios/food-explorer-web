@@ -14,6 +14,11 @@ export const Container = styled.div`
   background: transparent;
   border: 0;
 
+  @media (max-width: 1049px) {
+    justify-content: flex-start;
+    padding-left: 0.875rem;
+  }
+
   svg {
     font-size: 1.22rem;
     color: ${({ theme }) => theme.colors.light_400};

@@ -5,6 +5,7 @@ import { PiReceipt, PiSignOut } from 'react-icons/pi'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { Brand } from '../ui/Brand'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   const isAdmin = false
@@ -38,9 +39,9 @@ export function Header() {
   return (
     <Container>
       {windowWidth < queryWidth && (
-        <button className="menuBtn">
-          <AiOutlineMenu />
-        </button>
+        <Link to="/menu">
+          <AiOutlineMenu className="menuBtn" />
+        </Link>
       )}
       <Brand className="brand" isAdmin={isAdmin} />
 

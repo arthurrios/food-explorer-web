@@ -24,11 +24,9 @@ export const Container = styled.header`
     display: flex;
     color: ${({ theme }) => theme.colors.light_100};
 
-    svg {
-      font-size: 1.5rem;
-      min-width: 1.5rem;
-      max-width: 1.5rem;
-    }
+    font-size: 1.5rem;
+    min-width: 1.5rem;
+    max-width: 1.5rem;
   }
 
   input {
