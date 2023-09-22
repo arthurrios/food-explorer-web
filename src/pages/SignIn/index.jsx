@@ -6,7 +6,7 @@ export function SignIn() {
   return (
     <Container>
       <Main>
-        <Brand />
+        <Brand login />
         <Form>
           <h1>Faça login</h1>
           <div>

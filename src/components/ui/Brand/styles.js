@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Logo = styled.div`
   display: flex;
   width: max-content;
-  gap: 0.5rem;
+  gap: ${({ $login }) => ($login === 'true' ? '1.25rem' : '0.5rem')};
   font: ${({ theme }) => theme.fonts.roboto_bigger_bold};
 
   svg {

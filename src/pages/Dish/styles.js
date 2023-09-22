@@ -4,7 +4,7 @@ export const Container = styled.div`
   max-height: 100vh;
 `
 export const Main = styled.div`
-  padding: 8rem 7.625rem 0;
+  padding: 10rem 7.625rem 0;
   height: calc(100vh - 5rem);
 `
 export const DishItem = styled.div`
