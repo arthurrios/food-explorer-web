@@ -13,8 +13,28 @@ import {
   Main,
 } from './styles'
 import { Button } from '../../components/Button'
+import { useEffect, useState } from 'react'
+import { PiReceipt } from 'react-icons/pi'
+import { Link } from 'react-router-dom'
 
 export function Dish() {
+  const isAdmin = true
+
+  const queryWidth = 1050
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <Container>
       <Header />
@@ -38,14 +58,27 @@ export function Dish() {
                 <Ingredient ingredient="tomato" />
               </Ingredients>
             </DishInfo>
-            <AmmountOfDishes>
-              <DishControls>
-                <TfiMinus />
-                <span>01</span>
-                <TfiPlus />
-              </DishControls>
-              <Button>add ∙ $ 24,75</Button>
-            </AmmountOfDishes>
+            {isAdmin ? (
+              <Link to="/edit/:id">
+                <Button>Edit dish</Button>
+              </Link>
+            ) : (
+              <AmmountOfDishes>
+                <DishControls>
+                  <TfiMinus />
+                  <span>01</span>
+                  <TfiPlus />
+                </DishControls>
+                {windowWidth >= queryWidth ? (
+                  <Button>add ∙ $ 24,75</Button>
+                ) : (
+                  <Button>
+                    <PiReceipt />
+                    order ∙ $ 24,75
+                  </Button>
+                )}
+              </AmmountOfDishes>
+            )}
           </div>
         </DishItem>
       </Main>

@@ -7,6 +7,7 @@ export const Container = styled.div`
   padding: 0.5rem;
   border-radius: 0.3125rem;
   height: 2rem;
+  width: max-content;
   background-color: ${({ theme }) => theme.colors.dark_1000};
   font: ${({ theme }) => theme.fonts.poppins_100};
 `
