@@ -17,7 +17,7 @@ export function SignIn() {
             <label>Senha</label>
             <input type="password" placeholder="No mínimo 6 caracteres" />
           </div>
-          <Button title="Entrar" />
+          <Button>Entrar</Button>
           <button className="createBtn">Criar uma conta</button>
         </Form>
       </Main>

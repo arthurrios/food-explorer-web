@@ -21,7 +21,7 @@ export function SignUp() {
             <label>Senha</label>
             <input type="password" placeholder="No mínimo 6 caracteres" />
           </div>
-          <Button title="Entrar" />
+          <Button>Criar conta</Button>
           <button className="loginBtn">Já tenho uma conta</button>
         </Form>
       </Main>

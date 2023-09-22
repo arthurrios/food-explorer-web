@@ -7,7 +7,7 @@ import { AuthRoutes } from './auth.routes'
 
 export function Routes() {
   const isAdmin = false
-  const user = true
+  const user = false
 
   return (
     <BrowserRouter>
