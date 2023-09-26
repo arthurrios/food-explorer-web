@@ -12,7 +12,7 @@ export function ReturnButton() {
   return (
     <Container onClick={handleBack}>
       <IoIosArrowBack />
-      voltar
+      return
     </Container>
   )
 }

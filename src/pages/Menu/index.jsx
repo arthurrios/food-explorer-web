@@ -13,9 +13,28 @@ export function Menu() {
   const [search, setSearch] = useState('')
   const [hasSearchPlaceholder, setHasSearchPlaceholder] = useState(false)
 
+  const queryWidth = 1050
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
   useEffect(() => {
     setHasSearchPlaceholder(!search)
   }, [search])
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth)
+
+      if (window.innerWidth > queryWidth) {
+        handleCloseMenu()
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   function handleCloseMenu() {
     setSearch('')

@@ -4,7 +4,7 @@ export const Container = styled.div`
   max-height: 100vh;
 `
 export const Main = styled.div`
-  padding: 10rem 7.625rem 0;
+  padding: 9rem 7.625rem 0;
   height: calc(100vh - 4.8rem);
 
   @media (max-width: 1049px) {

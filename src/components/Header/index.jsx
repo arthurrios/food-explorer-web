@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export function Header() {
-  const isAdmin = false
+  const isAdmin = true
 
   const [search, setSearch] = useState('')
   const [hasSearchPlaceholder, setHasSearchPlaceholder] = useState(false)
