@@ -62,7 +62,7 @@ export function AddDish() {
             </TextArea>
           </div>
           <div>
-            <Button>Salvar alterações</Button>
+            <Button disabled>Salvar alterações</Button>
           </div>
         </Form>
       </Main>

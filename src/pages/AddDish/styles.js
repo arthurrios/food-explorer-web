@@ -15,7 +15,7 @@ export const Main = styled.div`
   }
 
   @media (max-width: 1049px) {
-    padding: 19.125rem 3.5rem 6.875rem;
+    padding: 37.125rem 3.5rem 6.875rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,24 +33,31 @@ export const Form = styled.form`
   > div {
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 1049px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
 
-  > div:nth-child(1) div:nth-child(3) {
-    width: 22.75rem;
-  }
+  @media (min-width: 1049px) {
+    > div:nth-child(1) div:nth-child(3) {
+      width: 22.75rem;
+    }
 
-  > div:nth-child(2) > div:nth-child(2) {
-    width: 15.6875rem;
-  }
+    > div:nth-child(2) > div:nth-child(2) {
+      width: 15.6875rem;
+    }
 
-  > div:nth-child(4) {
-    display: flex;
-    justify-content: flex-end;
-
-    button {
+    > div:nth-child(4) {
       display: flex;
-      align-items: flex-end;
-      width: max-content;
+      justify-content: flex-end;
+
+      button {
+        display: flex;
+        align-items: flex-end;
+        width: max-content;
+      }
     }
   }
 `
@@ -61,7 +68,6 @@ export const SelectImageBtn = styled.div`
   gap: 1rem;
   font: ${({ theme }) => theme.fonts.roboto_small_regular};
   color: ${({ theme }) => theme.colors.light_400};
-  margin-bottom: 1rem;
 
   > label {
     display: flex;
@@ -74,6 +80,10 @@ export const SelectImageBtn = styled.div`
     background-color: ${({ theme }) => theme.colors.dark_800};
     cursor: pointer;
     font: ${({ theme }) => theme.fonts.poppins_100};
+
+    @media (max-width: 1049px) {
+      width: 100%;
+    }
 
     svg {
       transform: rotate(-90deg);

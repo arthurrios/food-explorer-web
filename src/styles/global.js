@@ -59,4 +59,16 @@ export default createGlobalStyle`
         background-color: ${({ theme }) => theme.colors.dark_1000};
         border-radius: 0.5rem;
     }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
 `

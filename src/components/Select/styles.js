@@ -27,6 +27,10 @@ export const Selector = styled.select`
   outline: none;
   border: none;
 
+  @media (max-width: 1049px) {
+    background-color: ${({ theme }) => theme.colors.dark_900};
+  }
+
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
