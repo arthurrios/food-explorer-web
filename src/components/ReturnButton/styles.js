@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   font: ${({ theme }) => theme.fonts.poppins_300_bold};
   cursor: pointer;
+  width: max-content;
 
   > svg {
     font-size: 2rem;

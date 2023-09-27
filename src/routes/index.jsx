@@ -6,7 +6,7 @@ import { AdminRoutes } from './admin.routes'
 import { AuthRoutes } from './auth.routes'
 
 export function Routes() {
-  const isAdmin = true
+  const isAdmin = false
   const user = true
 
   return (

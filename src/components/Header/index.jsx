@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 export function Header() {
-  const isAdmin = true
+  const isAdmin = false
 
   const navigate = useNavigate()
 
@@ -20,6 +20,10 @@ export function Header() {
 
   function handleNewDish() {
     navigate('/add-dish')
+  }
+
+  function handleOrder() {
+    navigate('/order')
   }
 
   useEffect(() => {
@@ -66,7 +70,7 @@ export function Header() {
             Novo Prato
           </Button>
         ) : (
-          <Button className="orderLgBtn">
+          <Button onClick={handleOrder} className="orderLgBtn">
             <PiReceipt />
             {`Orders (0)`}
           </Button>

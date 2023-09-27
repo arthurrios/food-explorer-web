@@ -8,7 +8,7 @@ export function Footer() {
         <BsHexagonFill />
         food explorer
       </Brand>
-      <p>© 2023 - Todos os direitos reservados.</p>
+      <p>© 2023 - All rights reserved.</p>
     </Container>
   )
 }
