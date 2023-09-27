@@ -3,8 +3,12 @@ import { styled } from 'styled-components'
 export const Container = styled.button`
   width: 100%;
   padding: 0.75rem 2rem;
-  background-color: ${({ theme, $secondary }) =>
-    $secondary === 'true' ? 'transparent' : theme.colors.tints.tomato_100};
+  background-color: ${({ theme, $secondary, $tertiary }) =>
+    $secondary === 'true'
+      ? 'transparent'
+      : $tertiary === 'true'
+      ? theme.colors.dark_800
+      : theme.colors.tints.tomato_100};
   color: ${({ theme }) => theme.colors.light_100};
 
   border: none;

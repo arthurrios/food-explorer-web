@@ -15,15 +15,15 @@ import {
 import { Select } from '../../components/Select'
 import { Button } from '../../components/Button'
 
-export function AddDish() {
-  function handleAddDishImage() {}
+export function EditDish() {
+  function handleChangeDishImage() {}
 
   return (
     <Container>
       <Header />
       <Main>
         <ReturnButton />
-        <h1>Add Dish</h1>
+        <h1>Edit Dish</h1>
         <Form>
           <div>
             <SelectImageBtn>
@@ -34,7 +34,7 @@ export function AddDish() {
                 <input
                   type="file"
                   id="dishImage"
-                  onChange={handleAddDishImage}
+                  onChange={handleChangeDishImage}
                 />
               </label>
             </SelectImageBtn>
@@ -62,6 +62,7 @@ export function AddDish() {
             </TextArea>
           </div>
           <div>
+            <Button tertiary>Delete Dish</Button>
             <Button disabled>Save changes</Button>
           </div>
         </Form>
