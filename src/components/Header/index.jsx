@@ -5,16 +5,22 @@ import { PiReceipt, PiSignOut } from 'react-icons/pi'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { Brand } from '../ui/Brand'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function Header() {
   const isAdmin = true
+
+  const navigate = useNavigate()
 
   const [search, setSearch] = useState('')
   const [hasSearchPlaceholder, setHasSearchPlaceholder] = useState(false)
 
   const queryWidth = 1050
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  function handleNewDish() {
+    navigate('/add-dish')
+  }
 
   useEffect(() => {
     setHasSearchPlaceholder(!search)
@@ -56,7 +62,9 @@ export function Header() {
       )}
       {windowWidth >= queryWidth ? (
         isAdmin ? (
-          <Button className="newDishBtn">Novo Prato</Button>
+          <Button onClick={handleNewDish} className="newDishBtn">
+            Novo Prato
+          </Button>
         ) : (
           <Button className="orderLgBtn">
             <PiReceipt />

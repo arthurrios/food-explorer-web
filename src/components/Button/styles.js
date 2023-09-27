@@ -17,7 +17,7 @@ export const Container = styled.button`
   font-size: 0.875rem;
   transition: 0.2s;
 
-  &:hover {
+  &:hover:not($tertiary):not($secondary) {
     background-color: ${({ theme }) => theme.colors.tints.tomato_200};
   }
 

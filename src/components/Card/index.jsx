@@ -9,7 +9,7 @@ import { Button } from '../Button'
 import { PiHeartStraight, PiPencilSimple } from 'react-icons/pi'
 
 export function Card() {
-  const isAdmin = false
+  const isAdmin = true
 
   return (
     <Container>

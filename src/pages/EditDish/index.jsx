@@ -62,7 +62,7 @@ export function EditDish() {
           <div>
             <TextArea>
               <label htmlFor="Description">Description</label>
-              <textarea></textarea>
+              <textarea />
             </TextArea>
           </div>
           <div>

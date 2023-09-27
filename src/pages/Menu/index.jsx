@@ -6,7 +6,7 @@ import { Footer } from '../../components/Footer'
 import { useNavigate, Link } from 'react-router-dom'
 
 export function Menu() {
-  const isAdmin = false
+  const isAdmin = true
 
   const navigate = useNavigate()
 
@@ -62,7 +62,7 @@ export function Menu() {
             <ItemMenu>Meus pedidos</ItemMenu>
           )}
           {isAdmin ? (
-            <Link to="/add">
+            <Link to="/add-dish">
               <ItemMenu>Novo prato</ItemMenu>
             </Link>
           ) : (

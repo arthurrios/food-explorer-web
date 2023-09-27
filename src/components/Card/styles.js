@@ -108,4 +108,8 @@ export const TopRightButton = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 1049px) {
+    font-size: 2rem;
+  }
 `

@@ -40,6 +40,12 @@ export const Form = styled.form`
     }
   }
 
+  @media (max-width: 1049px) {
+    > div:nth-child(4) {
+      flex-direction: row;
+    }
+  }
+
   @media (min-width: 1049px) {
     > div:nth-child(1) div:nth-child(3) {
       width: 22.75rem;
@@ -119,7 +125,10 @@ export const Ingredients = styled.div`
   }
 
   > div {
-    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: max-content;
     padding: 0.5rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => theme.colors.dark_800};

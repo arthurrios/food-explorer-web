@@ -16,6 +16,7 @@ export const Container = styled.div`
     width: ${($isnew) => $isnew && '2rem'};
     background: none;
     border: none;
+    outline: none;
   }
 
   > button {
