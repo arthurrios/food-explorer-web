@@ -125,7 +125,10 @@ export const Ingredients = styled.div`
   }
 
   > div {
-    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: max-content;
     padding: 0.5rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => theme.colors.dark_800};

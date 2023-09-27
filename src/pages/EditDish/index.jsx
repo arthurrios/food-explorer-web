@@ -14,6 +14,7 @@ import {
 } from './styles'
 import { Select } from '../../components/Select'
 import { Button } from '../../components/Button'
+import { IngredientTag } from '../../components/IngredientTag'
 
 export function EditDish() {
   function handleChangeDishImage() {}
@@ -51,7 +52,10 @@ export function EditDish() {
           <div>
             <Ingredients>
               <label htmlFor="ingredients">Ingredients</label>
-              <div id="ingredients"></div>
+              <div id="ingredients">
+                <IngredientTag value="Naan Bread" />
+                <IngredientTag isnew placeholder="add" />
+              </div>
             </Ingredients>
             <InputWithLabel type="number" label="Price" placeholder="$ 00,00" />
           </div>
