@@ -4,9 +4,12 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { Input } from '../../components/Input'
 import { Footer } from '../../components/Footer'
 import { useNavigate, Link } from 'react-router-dom'
+import { useAuth } from '../../hooks/auth'
+import { USER_ROLE } from '../../utils/roles'
 
 export function Menu() {
-  const isAdmin = true
+  const { user } = useAuth()
+  const isAdmin = [USER_ROLE.ADMIN].includes(user.role)
 
   const navigate = useNavigate()
 

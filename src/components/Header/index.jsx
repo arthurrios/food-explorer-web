@@ -6,9 +6,12 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import { Brand } from '../ui/Brand'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../hooks/auth'
+import { USER_ROLE } from '../../utils/roles'
 
 export function Header() {
-  const isAdmin = false
+  const { user, signOut } = useAuth()
+  const isAdmin = [USER_ROLE.ADMIN].includes(user.role)
 
   const navigate = useNavigate()
 
@@ -24,6 +27,11 @@ export function Header() {
 
   function handleOrder() {
     navigate('/order')
+  }
+
+  function handleSignOut() {
+    navigate('/')
+    signOut()
   }
 
   useEffect(() => {
@@ -87,7 +95,7 @@ export function Header() {
         </OrderReceipt>
       )}
       {windowWidth >= queryWidth && (
-        <button className="logoutBtn">
+        <button onClick={handleSignOut} className="logoutBtn">
           <PiSignOut />
         </button>
       )}

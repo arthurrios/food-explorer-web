@@ -6,10 +6,13 @@ import {
   TopRightButton,
 } from './styles'
 import { Button } from '../Button'
-import { PiHeartStraight, PiPencilSimple } from 'react-icons/pi'
+import { PiPencilSimple } from 'react-icons/pi'
+import { useAuth } from '../../hooks/auth'
+import { USER_ROLE } from '../../utils/roles'
 
 export function Card() {
-  const isAdmin = true
+  const { user } = useAuth()
+  const isAdmin = [USER_ROLE.ADMIN].includes(user.role)
 
   return (
     <Container>
@@ -26,9 +29,9 @@ export function Card() {
         </TopRightButton>
       ) : (
         <>
-          <TopRightButton>
+          {/* <TopRightButton>
             <PiHeartStraight />
-          </TopRightButton>
+          </TopRightButton> */}
           <AmmountOfDishes>
             <DishControls>
               <TfiMinus />

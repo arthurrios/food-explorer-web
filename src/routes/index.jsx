@@ -1,18 +1,35 @@
-/* eslint-disable */
-
 import { BrowserRouter } from 'react-router-dom'
 import { CustomerRoutes } from './customer.routes'
 import { AdminRoutes } from './admin.routes'
 import { AuthRoutes } from './auth.routes'
+import { useAuth } from '../hooks/auth'
+import { useEffect } from 'react'
+import { api } from '../services/api'
+import { USER_ROLE } from '../utils/roles'
 
 export function Routes() {
-  const isAdmin = false
-  const user = true
+  const { user, signOut } = useAuth()
+
+  useEffect(() => {
+    api.get('/users/validated').catch((err) => {
+      if (err.response?.status === 401) {
+        signOut()
+      }
+    })
+  }, [])
+
+  function AccessRoute() {
+    switch (user.role) {
+      case USER_ROLE.ADMIN:
+        return <AdminRoutes />
+      case USER_ROLE.CUSTOMER:
+        return <CustomerRoutes />
+      default:
+        return <CustomerRoutes />
+    }
+  }
 
   return (
-    <BrowserRouter>
-      {user ? 
-        (isAdmin ? <AdminRoutes /> : <CustomerRoutes />) : <AuthRoutes />}
-    </BrowserRouter>
+    <BrowserRouter>{user ? <AccessRoute /> : <AuthRoutes />}</BrowserRouter>
   )
 }

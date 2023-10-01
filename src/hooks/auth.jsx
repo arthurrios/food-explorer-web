@@ -9,19 +9,22 @@ function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     try {
       const response = await api.post(
-        'sessions',
+        '/sessions',
         { email, password },
         { withCredentials: true },
       )
 
       const { user } = response.data
 
+      console.log(user)
       localStorage.setItem('@fexplorer:user', JSON.stringify(user))
 
       setData({ user })
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
+      } else {
+        alert('Could not sign in')
       }
     }
   }

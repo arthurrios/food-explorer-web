@@ -70,13 +70,18 @@ export const Form = styled.form`
     width: 100%;
     padding: 0.75rem 0.875rem;
     align-items: center;
-    background-color: ${({ theme }) => theme.colors.dark_900};
+    background: transparent;
     color: ${({ theme }) => theme.colors.light_400};
     border-radius: 8px;
-    border: 0;
+    border: 1px solid ${({ theme }) => theme.colors.light_100};
 
     &::placeholder {
       color: ${({ theme }) => theme.colors.light_500};
+    }
+
+    @media (max-width: 1049px) {
+      background: ${({ theme }) => theme.colors.dark_900};
+      border: none;
     }
   }
 
@@ -89,10 +94,11 @@ export const Form = styled.form`
       margin-bottom: 0.5rem;
     }
   }
-  .createBtn {
-    background-color: transparent;
-    border: none;
+
+  > a {
+    display: flex;
+    justify-content: center;
+    font: ${({ theme }) => theme.fonts.poppins_100};
     color: ${({ theme }) => theme.colors.light_100};
-    font-size: 0.875rem;
   }
 `

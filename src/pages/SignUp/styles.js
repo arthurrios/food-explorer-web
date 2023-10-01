@@ -88,10 +88,10 @@ export const Form = styled.form`
       margin-bottom: 0.5rem;
     }
   }
-  .loginBtn {
-    background-color: transparent;
-    border: none;
+  > a {
+    display: flex;
+    justify-content: center;
+    font: ${({ theme }) => theme.fonts.poppins_100};
     color: ${({ theme }) => theme.colors.light_100};
-    font-size: 0.875rem;
   }
 `
