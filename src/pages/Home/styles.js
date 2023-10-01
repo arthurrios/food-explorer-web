@@ -13,6 +13,9 @@ export const Container = styled.div`
     padding-top: 7.75rem;
   }
 `
+export const Main = styled.div`
+  height: calc(100vh - 15.6rem);
+`
 
 export const Banner = styled.div`
   display: flex;
@@ -116,4 +119,16 @@ export const BgBanner = styled.div`
   @media (max-width: 1049px) {
     height: 7.5rem;
   }
+`
+
+export const NoResults = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+  padding: 2rem 0;
+  border-radius: 0.5rem;
+  background-color: ${({ theme }) => theme.colors.dark_500};
+  font: ${({ theme }) => theme.fonts.poppins_500};
+  color: ${({ theme }) => theme.colors.light_400};
 `

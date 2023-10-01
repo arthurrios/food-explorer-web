@@ -9,8 +9,10 @@ import { Button } from '../Button'
 import { PiPencilSimple } from 'react-icons/pi'
 import { useAuth } from '../../hooks/auth'
 import { USER_ROLE } from '../../utils/roles'
+import { useState, useEffect } from 'react'
+import { api } from '../../services/api'
 
-export function Card() {
+export function Card({ dish, setDishToAdd }) {
   const { user } = useAuth()
   const isAdmin = [USER_ROLE.ADMIN].includes(user.role)
 
