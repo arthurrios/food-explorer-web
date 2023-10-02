@@ -21,13 +21,8 @@ import { useState, useEffect } from 'react'
 import { TfiClose } from 'react-icons/tfi'
 import { api } from '../../services/api'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../../hooks/auth'
-import { USER_ROLE } from '../../utils/roles'
 
 export function AddDish() {
-  const { user } = useAuth()
-  // const isAdmin = [USER_ROLE.ADMIN].includes(user.role)
-
   const navigate = useNavigate()
 
   const [isNotBlankFields, setIsNotBlankFields] = useState(false)
