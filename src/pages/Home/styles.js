@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 `
 export const Main = styled.div`
-  height: calc(100vh - 15.6rem);
+  /* height: calc(100vh - 15.6rem); */
 `
 
 export const Banner = styled.div`

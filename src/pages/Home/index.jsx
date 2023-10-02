@@ -13,13 +13,12 @@ import {
   WrappedImg,
 } from './styles'
 import { api } from '../../services/api'
-import { useAuth } from '../../hooks/auth'
-import { USER_ROLE } from '../../utils/roles'
 
 export function Home() {
   const [meals, setMeals] = useState([])
   const [beverages, setBeverages] = useState([])
   const [desserts, setDesserts] = useState([])
+  const [dishToAdd, setDishToAdd] = useState()
 
   const [dishes, setDishes] = useState([])
 
@@ -28,7 +27,9 @@ export function Home() {
   useEffect(() => {
     async function fetchDishes() {
       try {
-        const response = await api.get(`/dishes?itemSearch=${search}`)
+        const response = await api.get(`/dishes?name=${search}`, {
+          withCredentials: true,
+        })
 
         setDishes(response.data)
 

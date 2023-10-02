@@ -16,7 +16,6 @@ function AuthProvider({ children }) {
 
       const { user } = response.data
 
-      console.log(user)
       localStorage.setItem('@fexplorer:user', JSON.stringify(user))
 
       setData({ user })

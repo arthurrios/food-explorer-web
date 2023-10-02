@@ -13,7 +13,7 @@ export const Container = styled.div`
     $isnew ? 'transparent' : theme.colors.light_600};
 
   > input {
-    width: ${($isnew) => $isnew && '2rem'};
+    width: ${($isnew) => $isnew && '5rem'};
     background: none;
     border: none;
     outline: none;
