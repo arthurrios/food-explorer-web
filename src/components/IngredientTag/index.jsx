@@ -6,7 +6,7 @@ export function IngredientTag({ isnew, value, onClick, ...props }) {
     if (!isnew) {
       const { length } = value
 
-      const inputLength = (length * 8 + 3) / 16
+      const inputLength = (length * 8 + 15) / 16
 
       return inputLength
     }
