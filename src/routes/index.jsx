@@ -10,13 +10,13 @@ import { USER_ROLE } from '../utils/roles'
 export function Routes() {
   const { user, signOut } = useAuth()
 
-  // useEffect(() => {
-  //   api.get('/users/validated').catch((error) => {
-  //     if (error.response?.status === 401) {
-  //       signOut()
-  //     }
-  //   })
-  // }, [])
+  useEffect(() => {
+    api.get('/users/validated').catch((error) => {
+      if (error.res?.status === 401) {
+        signOut()
+      }
+    })
+  }, [])
 
   function AccessRoute() {
     switch (user.role) {

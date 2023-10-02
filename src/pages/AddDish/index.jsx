@@ -91,7 +91,7 @@ export function AddDish() {
       }
 
       fileUploadForm.append('name', name)
-      fileUploadForm.append('category', selectedCategory.toLowerCase())
+      fileUploadForm.append('category', selectedCategory)
       fileUploadForm.append('ingredients', JSON.stringify(ingredientTags))
       fileUploadForm.append('price', formattedPrice)
       fileUploadForm.append('description', description)

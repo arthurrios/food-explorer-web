@@ -9,21 +9,26 @@ import { Button } from '../Button'
 import { PiPencilSimple } from 'react-icons/pi'
 import { useAuth } from '../../hooks/auth'
 import { USER_ROLE } from '../../utils/roles'
-import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
+import defaultDish from '../../assets/dish.svg'
 
 export function Card({ dish, setDishToAdd }) {
   const { user } = useAuth()
   const isAdmin = [USER_ROLE.ADMIN].includes(user.role)
 
+  const dishImage = dish.image
+    ? `${api.defaults.baseURL}/files/${dish.image}`
+    : `${defaultDish}`
+
   return (
     <Container>
-      <img src="../../../public/dishes/Mask group-0.png" alt="" />
-      <h3>Ravanello Salad &gt;</h3>
-      <p>
-        Radishes, green leaves and sweet and sour sauce sprinkled with sesame
-      </p>
-      <span>$ 24,97</span>
+      <img
+        src={dishImage}
+        alt={`Imagem de ${dish.description.toLowerCase()}`}
+      />
+      <h3>{dish.name} &gt;</h3>
+      <p>{dish.description}</p>
+      <span>$ {dish.price.toFixed(2).replace('.', ',')}</span>
 
       {isAdmin ? (
         <TopRightButton>
