@@ -15,6 +15,19 @@ export const Container = styled.header`
   background-color: ${({ theme }) => theme.colors.dark_600};
   padding: 1.5rem 7.75rem;
 
+  > div:nth-child(1) {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    width: 58.5rem;
+  }
+
+  > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   @media (max-width: 1049px) {
     padding: 3.5rem 1.75rem 1.5rem;
   }

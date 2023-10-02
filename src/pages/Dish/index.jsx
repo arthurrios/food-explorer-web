@@ -67,7 +67,7 @@ export function Dish() {
       }
     }
     fetchDish()
-  }, [])
+  })
 
   return (
     <Container>

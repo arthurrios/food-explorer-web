@@ -104,44 +104,49 @@ export function Header({ setItemSearch, page, orderItems, totalOrder }) {
           <AiOutlineMenu className="menuBtn" />
         </Link>
       )}
-      <Brand className="brand" isAdmin={isAdmin} />
+      <div>
+        <Brand className="brand" isAdmin={isAdmin} />
 
-      {windowWidth >= queryWidth && (
-        <Input
-          type="text"
-          searchPlaceholder={hasSearchPlaceholder}
-          aria-label="Search for dishes or ingredients"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-        />
-      )}
-      {windowWidth >= queryWidth ? (
-        isAdmin ? (
-          <Button onClick={handleNewDish} className="newDishBtn">
-            Novo Prato
-          </Button>
-        ) : (
-          <Button onClick={handleOrder} className="orderLgBtn">
+        {windowWidth >= queryWidth && page === 'home' && (
+          <Input
+            className="searchInput"
+            type="text"
+            searchPlaceholder={hasSearchPlaceholder}
+            aria-label="Search for dishes or ingredients"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
+        )}
+      </div>
+      <div>
+        {windowWidth >= queryWidth ? (
+          isAdmin ? (
+            <Button onClick={handleNewDish} className="newDishBtn">
+              Novo Prato
+            </Button>
+          ) : (
+            <Button onClick={handleOrder} className="orderLgBtn">
+              <PiReceipt />
+              {`Orders (0)`}
+            </Button>
+          )
+        ) : isAdmin ? (
+          <OrderReceipt style={{ visibility: 'hidden' }}>
             <PiReceipt />
-            {`Orders (0)`}
-          </Button>
-        )
-      ) : isAdmin ? (
-        <OrderReceipt style={{ visibility: 'hidden' }}>
-          <PiReceipt />
-          <span>0</span>
-        </OrderReceipt>
-      ) : (
-        <OrderReceipt>
-          <PiReceipt />
-          <span>0</span>
-        </OrderReceipt>
-      )}
-      {windowWidth >= queryWidth && (
-        <button onClick={handleSignOut} className="logoutBtn">
-          <PiSignOut />
-        </button>
-      )}
+            <span>0</span>
+          </OrderReceipt>
+        ) : (
+          <OrderReceipt>
+            <PiReceipt />
+            <span>0</span>
+          </OrderReceipt>
+        )}
+        {windowWidth >= queryWidth && (
+          <button onClick={handleSignOut} className="logoutBtn">
+            <PiSignOut />
+          </button>
+        )}
+      </div>
     </Container>
   )
 }
