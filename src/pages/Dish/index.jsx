@@ -27,6 +27,8 @@ export function Dish() {
 
   const [dish, setDish] = useState()
   const [dishAmount, setDishAmount] = useState(1)
+  const [dishToAdd, setDishToAdd] = useState()
+  const [orderItems, setOrderItems] = useState(0)
 
   const navigate = useNavigate()
 
@@ -49,6 +51,10 @@ export function Dish() {
   const queryWidth = 1050
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
+  function handleAddDish(dishId, amount) {
+    setDishToAdd({ dishId, amount })
+  }
+
   useEffect(() => {
     function handleResize() {
       setWindowWidth(window.innerWidth)
@@ -60,6 +66,29 @@ export function Dish() {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
+  useEffect(() => {
+    if (dishToAdd) {
+      const oldItems = JSON.parse(localStorage.getItem('@fexplorer:order'))
+      const existingDishIndex = oldItems.dishes.findIndex(
+        (dish) => dish.dishId === dishToAdd.dishId,
+      )
+
+      const updatedOrder = { ...oldItems }
+
+      if (existingDishIndex !== -1) {
+        updatedOrder.dishes[existingDishIndex].amount += dishToAdd.amount
+      } else {
+        updatedOrder.dishes.push(dishToAdd)
+      }
+
+      localStorage.setItem('@fexplorer:order', JSON.stringify(updatedOrder))
+
+      setOrderItems(orderItems + dishToAdd.amount)
+
+      alert('Dish(es) added to order.')
+    }
+  }, [dishToAdd])
 
   useEffect(() => {
     async function fetchDish() {
@@ -77,7 +106,7 @@ export function Dish() {
 
   return (
     <Container>
-      <Header />
+      <Header orderItems={orderItems} dish={dish} />
       <Main>
         <ReturnButton />
         {dish && (
@@ -116,7 +145,7 @@ export function Dish() {
                     <TfiPlus onClick={increase} />
                   </DishControls>
                   {windowWidth >= queryWidth ? (
-                    <Button>
+                    <Button onClick={() => handleAddDish(dish.id, dishAmount)}>
                       add ∙ ${' '}
                       {(Number(dish.price) * Number(dishAmount))
                         .toFixed(2)
@@ -124,7 +153,7 @@ export function Dish() {
                         .replace('.', ',')}
                     </Button>
                   ) : (
-                    <Button>
+                    <Button onClick={() => handleAddDish(dish.id, dishAmount)}>
                       <PiReceipt />
                       order ∙ ${' '}
                       {(Number(dish.price) * Number(dishAmount))
