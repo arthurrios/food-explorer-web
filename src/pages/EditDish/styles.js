@@ -41,21 +41,21 @@ export const Form = styled.form`
   }
 
   @media (max-width: 1049px) {
-    > div:nth-child(4) {
+    > div:nth-child(5) {
       flex-direction: row;
     }
   }
 
   @media (min-width: 1049px) {
-    > div:nth-child(1) div:nth-child(3) {
+    > div:nth-child(2) div:nth-child(3) {
       width: 22.75rem;
     }
 
-    > div:nth-child(2) > div:nth-child(2) {
+    > div:nth-child(3) > div:nth-child(2) {
       width: 15.6875rem;
     }
 
-    > div:nth-child(4) {
+    > div:nth-child(5) {
       display: flex;
       justify-content: flex-end;
 
@@ -66,6 +66,46 @@ export const Form = styled.form`
       }
     }
   }
+`
+
+export const ChoiceOfImage = styled.div`
+  position: relative;
+  background-color: ${({ theme }) => theme.colors.dark_800};
+  height: 12rem;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  color: ${({ theme }) => theme.colors.light_700};
+  font: ${({ theme }) => theme.fonts.poppins_300_medium};
+  text-align: center;
+  padding: 2rem;
+
+  @media (max-width: 1049px) {
+    width: 100%;
+  }
+
+  > img {
+    height: 8rem;
+  }
+
+  > div {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    > svg {
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+`
+
+export const RemoveImage = styled.div`
+  cursor: pointer;
 `
 
 export const SelectImageBtn = styled.div`
@@ -152,5 +192,9 @@ export const TextArea = styled.div`
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => theme.colors.dark_800};
+
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.light_500};
+    }
   }
 `

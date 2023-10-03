@@ -27,11 +27,9 @@ export const DishItem = styled.div`
   }
 
   > div {
-    a {
-      > button {
-        margin-top: 3rem;
-        max-width: 8.2rem;
-      }
+    > button {
+      margin-top: 3rem;
+      max-width: 8.2rem;
     }
   }
 

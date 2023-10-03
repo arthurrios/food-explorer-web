@@ -28,6 +28,10 @@ export function Card({ dish, setDishToAdd }) {
     navigate(`/dish/${id}`)
   }
 
+  function handleEditDish(id) {
+    navigate(`/edit-dish/${id}`)
+  }
+
   const [dishAmount, setDishAmount] = useState(1)
 
   function decrease() {
@@ -56,7 +60,7 @@ export function Card({ dish, setDishToAdd }) {
       <span>$ {dish.price.toFixed(2).replace('.', ',')}</span>
 
       {isAdmin ? (
-        <TopRightButton>
+        <TopRightButton onClick={() => handleEditDish(dish.id)}>
           <PiPencilSimple />
         </TopRightButton>
       ) : (

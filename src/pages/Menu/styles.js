@@ -30,6 +30,39 @@ export const Main = styled.div`
   }
 `
 
+export const SearchList = styled.div`
+  position: absolute;
+  top: 13rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: calc(100% - 3.5rem);
+  font: ${({ theme }) => theme.fonts.roboto_small_regular};
+  color: ${({ theme }) => theme.colors.light_400};
+  background-color: ${({ theme }) => theme.colors.dark_600};
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  img {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s;
+    border-radius: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+      background-color: ${({ theme }) => theme.colors.dark_900};
+    }
+  }
+`
+
 export const ItemMenu = styled.div`
   text-decoration: none;
   padding: 0.625rem;

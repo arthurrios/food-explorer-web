@@ -15,7 +15,7 @@ export const Main = styled.div`
   }
 
   @media (max-width: 1049px) {
-    padding: 37.125rem 3.5rem 6.875rem;
+    padding: 45.125rem 3.5rem 6.875rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

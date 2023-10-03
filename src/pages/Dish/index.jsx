@@ -15,7 +15,7 @@ import {
 import { Button } from '../../components/Button'
 import { useEffect, useState } from 'react'
 import { PiReceipt } from 'react-icons/pi'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { USER_ROLE } from '../../utils/roles'
 import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api'
@@ -28,6 +28,8 @@ export function Dish() {
   const [dish, setDish] = useState()
   const [dishAmount, setDishAmount] = useState(1)
 
+  const navigate = useNavigate()
+
   function decrease() {
     if (dishAmount > 1) {
       setDishAmount((prevState) => prevState - 1)
@@ -39,6 +41,10 @@ export function Dish() {
   }
 
   const params = useParams()
+
+  function handleEditDish(id) {
+    navigate(`/edit-dish/${id}`)
+  }
 
   const queryWidth = 1050
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -99,7 +105,9 @@ export function Dish() {
                 </Ingredients>
               </DishInfo>
               {isAdmin ? (
-                <Button>Edit dish</Button>
+                <Button onClick={() => handleEditDish(params.id)}>
+                  Edit dish
+                </Button>
               ) : (
                 <AmmountOfDishes>
                   <DishControls>
@@ -118,7 +126,7 @@ export function Dish() {
                   ) : (
                     <Button>
                       <PiReceipt />
-                      order ∙ $${' '}
+                      order ∙ ${' '}
                       {(Number(dish.price) * Number(dishAmount))
                         .toFixed(2)
                         .toString()
