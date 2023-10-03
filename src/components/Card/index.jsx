@@ -12,6 +12,7 @@ import { USER_ROLE } from '../../utils/roles'
 import { api } from '../../services/api'
 import defaultDish from '../../assets/dish.svg'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 export function Card({ dish, setDishToAdd }) {
   const { user } = useAuth()
@@ -25,6 +26,22 @@ export function Card({ dish, setDishToAdd }) {
 
   function handleDish(id) {
     navigate(`/dish/${id}`)
+  }
+
+  const [dishAmount, setDishAmount] = useState(1)
+
+  function decrease() {
+    if (dishAmount > 1) {
+      setDishAmount((prevState) => prevState - 1)
+    }
+  }
+
+  function increase() {
+    setDishAmount((prevState) => prevState + 1)
+  }
+
+  function handleAddDish(dishId, amount) {
+    setDishToAdd({ dishId, amount })
   }
 
   return (
@@ -49,11 +66,13 @@ export function Card({ dish, setDishToAdd }) {
           </TopRightButton> */}
           <AmmountOfDishes>
             <DishControls>
-              <TfiMinus />
-              <span>01</span>
-              <TfiPlus />
+              <TfiMinus onClick={decrease} />
+              <span>{dishAmount.toString().padStart(2, '0')}</span>
+              <TfiPlus onClick={increase} />
             </DishControls>
-            <Button>add</Button>
+            <Button onClick={() => handleAddDish(dish.id, dishAmount)}>
+              add
+            </Button>
           </AmmountOfDishes>
         </>
       )}

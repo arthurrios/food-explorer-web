@@ -14,9 +14,27 @@ function AuthProvider({ children }) {
         { withCredentials: true },
       )
 
-      const { user } = response.data
+      const { user, role } = response.data
+      let order = {}
 
       localStorage.setItem('@fexplorer:user', JSON.stringify(user))
+
+      if (role !== 'admin') {
+        const storageOrder = JSON.parse(
+          localStorage.getItem('@fexplorer:order'),
+        )
+
+        if (storageOrder && storageOrder.user_id === user.id) {
+          order = storageOrder
+        } else {
+          order = {
+            user_id: user.id,
+            dishes: [],
+          }
+
+          localStorage.setItem('@fexplorer:order', JSON.stringify(order))
+        }
+      }
 
       setData({ user })
     } catch (error) {
@@ -36,10 +54,12 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const user = localStorage.getItem('@fexplorer:user')
+    const order = localStorage.getItem('@fexplorer:order')
 
     if (user) {
       setData({
         user: JSON.parse(user),
+        order: JSON.parse(order),
       })
     }
   }, [])
@@ -50,6 +70,7 @@ function AuthProvider({ children }) {
         signIn,
         signOut,
         user: data.user,
+        order: data.order,
       }}
     >
       {children}

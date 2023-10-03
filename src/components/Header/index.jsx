@@ -17,6 +17,8 @@ export function Header({ setItemSearch, page, orderItems, totalOrder }) {
   const navigate = useNavigate()
 
   const [dishes, setDishes] = useState([])
+  const [totalAmount, setTotalAmount] = useState(0)
+
   const [search, setSearch] = useState('')
   const [filteredSearch, setFilteredSearch] = useState([])
   const [hasSearchPlaceholder, setHasSearchPlaceholder] = useState(false)
@@ -97,6 +99,25 @@ export function Header({ setItemSearch, page, orderItems, totalOrder }) {
     }
   }, [])
 
+  useEffect(() => {
+    const oldItems = JSON.parse(localStorage.getItem('@fexplorer:order'))
+
+    if (oldItems && oldItems.dishes) {
+      let total = 0
+
+      for (const dish of oldItems.dishes) {
+        if (dish.amount) {
+          total += dish.amount
+        }
+      }
+      setTotalAmount(total)
+    } else {
+      setTotalAmount(orderItems)
+    }
+  }, [orderItems, totalOrder])
+
+  console.log(totalAmount)
+
   return (
     <Container>
       {windowWidth < queryWidth && (
@@ -127,18 +148,18 @@ export function Header({ setItemSearch, page, orderItems, totalOrder }) {
           ) : (
             <Button onClick={handleOrder} className="orderLgBtn">
               <PiReceipt />
-              {`Orders (0)`}
+              {`Orders (${totalAmount})`}
             </Button>
           )
         ) : isAdmin ? (
           <OrderReceipt style={{ visibility: 'hidden' }}>
             <PiReceipt />
-            <span>0</span>
+            <span>{totalAmount}</span>
           </OrderReceipt>
         ) : (
           <OrderReceipt>
             <PiReceipt />
-            <span>0</span>
+            <span>{totalAmount}</span>
           </OrderReceipt>
         )}
         {windowWidth >= queryWidth && (

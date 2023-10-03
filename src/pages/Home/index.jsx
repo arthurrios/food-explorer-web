@@ -126,6 +126,29 @@ export function Home() {
     )
   }, [itemSearch])
 
+  useEffect(() => {
+    if (dishToAdd) {
+      const oldItems = JSON.parse(localStorage.getItem('@fexplorer:order'))
+      const existingDishIndex = oldItems.dishes.findIndex(
+        (dish) => dish.dishId === dishToAdd.dishId,
+      )
+
+      const updatedOrder = { ...oldItems }
+
+      if (existingDishIndex !== -1) {
+        updatedOrder.dishes[existingDishIndex].amount += dishToAdd.amount
+      } else {
+        updatedOrder.dishes.push(dishToAdd)
+      }
+
+      localStorage.setItem('@fexplorer:order', JSON.stringify(updatedOrder))
+
+      setOrderItems(orderItems + dishToAdd.amount)
+
+      alert('Dish(es) added to order.')
+    }
+  }, [dishToAdd])
+
   return (
     <>
       <Container>
