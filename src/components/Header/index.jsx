@@ -116,8 +116,6 @@ export function Header({ setItemSearch, page, orderItems, totalOrder }) {
     }
   }, [orderItems, totalOrder])
 
-  console.log(totalAmount)
-
   return (
     <Container>
       {windowWidth < queryWidth && (
