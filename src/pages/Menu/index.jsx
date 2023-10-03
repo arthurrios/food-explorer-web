@@ -58,22 +58,17 @@ export function Menu() {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <Link to="/orders">
-          {isAdmin ? (
-            <ItemMenu>Pedidos</ItemMenu>
-          ) : (
-            <ItemMenu>Meus pedidos</ItemMenu>
-          )}
-          {isAdmin ? (
-            <Link to="/add-dish">
-              <ItemMenu>Novo prato</ItemMenu>
-            </Link>
-          ) : (
-            <Link to="/favorites">
-              <ItemMenu>Favoritos</ItemMenu>
-            </Link>
-          )}
-        </Link>
+
+        {isAdmin ? (
+          <Link to="/add-dish">
+            <ItemMenu>Add Dish</ItemMenu>
+          </Link>
+        ) : (
+          <Link to="/order">
+            <ItemMenu>My Order</ItemMenu>
+          </Link>
+        )}
+
         <ItemMenu>Sair</ItemMenu>
       </Main>
       <Footer />

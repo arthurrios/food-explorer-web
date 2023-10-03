@@ -87,6 +87,7 @@ export const OrderReceipt = styled.div`
   position: relative;
   display: flex;
   margin-top: 0.3rem;
+  cursor: pointer;
 
   > svg {
     font-size: 2rem;

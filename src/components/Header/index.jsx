@@ -156,7 +156,7 @@ export function Header({ setItemSearch, page, orderItems, totalOrder }) {
           </OrderReceipt>
         ) : (
           <OrderReceipt>
-            <PiReceipt />
+            <PiReceipt onClick={handleOrder} />
             <span>{totalAmount}</span>
           </OrderReceipt>
         )}

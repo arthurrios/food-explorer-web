@@ -19,7 +19,7 @@ import defaultDish from '../../assets/dish.svg'
 import { useNavigate } from 'react-router-dom'
 
 export function Order() {
-  const { user, order } = useAuth()
+  const { user } = useAuth()
 
   const navigate = useNavigate()
 

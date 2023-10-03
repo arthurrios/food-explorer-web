@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   animation: leftToRight 0.3s ease-in;
+  cursor: pointer;
 
   @media (max-width: 1049px) {
     flex-direction: row;
