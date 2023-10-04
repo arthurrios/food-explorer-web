@@ -29,7 +29,6 @@ export function EditDish() {
   const params = useParams()
 
   const [dish, setDish] = useState({})
-  const [isNotBlankFields, setIsNotBlankFields] = useState(false)
   const [name, setName] = useState('')
   const [dishImage, setDishImage] = useState('')
   const [dishImageFile, setDishImageFile] = useState('')
