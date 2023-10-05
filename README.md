@@ -10,6 +10,8 @@ This is the frontend code of the application Food Explorer that simulates a food
 - `npm run dev`
 - `yarn run dev` or `yarn dev`
    [Backend Repo](https://github.com/arthurrios/food-explorer-api)
+## Deploy:
+[WebApp](https://foodexplorer-r2.netlify.app)
 ## How to use:
 ### As Admin:
 1. Log with the admin account:
